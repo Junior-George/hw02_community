@@ -21,6 +21,7 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name='posts'
     )
+
     def __str__(self):
         return self.text
 
@@ -28,6 +29,6 @@ class Post(models.Model):
         Group,
         on_delete=models.SET_NULL,
         blank=True,
-        null=True
+        null=True,
         related_name='posts'
     )
