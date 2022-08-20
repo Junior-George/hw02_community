@@ -4,7 +4,6 @@
 {% block title %} {{ title }} {% endblock title %}
 {% block content %} 
 {% for post in posts %}
-  <!-- класс py-5 создает отступы сверху и снизу блока -->
   <div class="container py-5">     
     <h1>Последние обновления на сайте</h1>
     <article>
@@ -24,7 +23,6 @@
       {% endif %}
       {% if not forloop.last %} <hr> {% endif %}
     </article>
-    <!-- под последним постом нет линии -->
   </div>  
 {% endfor %}
 {% endblock content %}
