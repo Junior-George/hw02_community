@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
-
+MAX_LENGHT = 79
 
 class Group(models.Model):
     title = models.CharField(max_length=200)
@@ -22,9 +22,6 @@ class Post(models.Model):
         related_name='posts'
     )
 
-    def __str__(self):
-        return self.text
-
     group = models.ForeignKey(
         Group,
         on_delete=models.SET_NULL,
@@ -32,3 +29,6 @@ class Post(models.Model):
         null=True,
         related_name='posts'
     )
+
+    def __str__(self):
+        return self.text[:MAX_LENGHT]
